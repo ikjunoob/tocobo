@@ -1,0 +1,54 @@
+header {
+    position: fixed;
+    z-index: 4;
+    top: 4rem;
+    width: 100%;
+    height: 10.5rem;
+    transition: top .3s ease;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+
+            a {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--primary);
+                position: relative;
+                padding: 0 .5rem;
+
+                &:after {
+                    display: block;
+                    content: "";
+                    width: 0%;
+                    height: .1rem;
+                    background-color: var(--primary);
+                    left: 0;
+                    position: absolute;
+                    transition: width .3s ease;
+                }
+
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+
+        h1.tit {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .util-lst {
+            display: flex;
+            gap: 1.2rem;
+
+        }
+    }
+}

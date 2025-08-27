@@ -1,8 +1,18 @@
 import React from 'react'
-
+import { headerData } from '../util/header'
 const Util = () => {
+    const utilData = headerData.utils;
     return (
-        <div>Util</div>
+        <ul className='util-lst'>
+            {utilData.map((util) => (
+
+                <li key={util.id}>
+                    <a href={util.href}>
+                        <img src={util.icon} alt={util.label} />
+                    </a>
+                </li>
+            ))}
+        </ul>
     )
 }
 

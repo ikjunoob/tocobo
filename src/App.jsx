@@ -7,10 +7,19 @@ import Cta from "./sections/Cta"
 import Reviews from "./sections/Reviews"
 import Products from "./sections/Products"
 import "./styles/main.scss"
+import { useState } from "react"
+import TopBanner from "./components/Topbanner"
 function App() {
 
+  const [topBanner, setTopBanner] = useState("")
+
+  const upTopBanner = () => {
+    setTopBanner("up")
+  }
+
   return (
-    <>
+    <div className={`app-container  ${topBanner}`}>
+      <TopBanner onClick={upTopBanner} />
       <Header />
       <main>
         <section id="Hero" className="Section">
@@ -30,7 +39,7 @@ function App() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
