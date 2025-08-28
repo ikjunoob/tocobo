@@ -1,6 +1,126 @@
-.top-btn {
+/* 컨테이너 */
+.floating-btns {
     position: fixed;
-    z-index: 5;
+    z-index: 1000;
     right: 2rem;
-    bottom: 2rem
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &.is-visible {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+}
+
+/* 파란 원형 ↑ */
+.top-btn {
+    width: 64px;
+    height: 64px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #0aa4df;
+    /* 디자인 파란색 */
+    background-image: url("/img/icon_top.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    }
+}
+
+/* 말풍선 묶음 */
+.talk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    /* 말풍선과 라벨 간격 */
+}
+
+/* 빨간 말풍선(원 + 꼬리) */
+.talk-bubble {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #e84040;
+    /* 디자인 빨간색 */
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    }
+
+    /* 꼬리 */
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 14px;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-top-color: #e84040;
+        /* 위/왼쪽을 빨강으로 채워 삼각형 */
+        border-left-color: #e84040;
+    }
+}
+
+/* 말풍선 내부 텍스트 */
+.talk-text {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* 아래 라벨 (이탤릭) */
+.talk-label {
+    color: #e84040;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+/* 모바일 사이즈 조정 */
+@media (max-width: 768px) {
+    .floating-btns {
+        right: 1rem;
+        bottom: 1rem;
+        gap: 12px;
+    }
+
+    .top-btn,
+    .talk-bubble {
+        width: 56px;
+        height: 56px;
+    }
+
+    .talk-label {
+        font-size: 14px;
+    }
 }
