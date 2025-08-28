@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { heroSlides } from '../util/hero'
-import '../styles/sections/hero.scss'
+import '../styles/section/hero.scss'
 const Hero = () => {
     return (
         <div className='hero-container'>

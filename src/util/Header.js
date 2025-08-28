@@ -36,4 +36,6 @@ export const headerData = {
         { id: "cart", label: "장바", icon: img("icon_cart.svg"), href: "#" },
     ],
 
+
+
 }

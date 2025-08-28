@@ -6,9 +6,11 @@ import Brand from "./sections/Brand"
 import Cta from "./sections/Cta"
 import Reviews from "./sections/Reviews"
 import Products from "./sections/Products"
-import "./styles/main.scss" 
+import "./styles/main.scss"
 import { useState } from "react"
+import TopBtn from "./components/TopBtn"
 import TopBanner from "./components/Topbanner"
+
 function App() {
 
   const [topBanner, setTopBanner] = useState("")
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <div className={`app-container  ${topBanner}`}>
+      <TopBtn />
       <TopBanner onClick={upTopBanner} />
       <Header />
       <main>
