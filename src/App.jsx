@@ -6,7 +6,7 @@ import Brand from "./sections/Brand"
 import Cta from "./sections/Cta"
 import Reviews from "./sections/Reviews"
 import Products from "./sections/Products"
-import "./styles/main.scss"
+import "./styles/main.scss" 
 import { useState } from "react"
 import TopBanner from "./components/Topbanner"
 function App() {
