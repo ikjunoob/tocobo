@@ -1,6 +1,6 @@
 import React from 'react'
 import { categories } from '../util/cta'
-import '../styles/section/cta.scss'
+import "../styles/sections/cta.scss"
 const Cta = () => {
     return (
         <div className='inner cta-inner'>

@@ -2,16 +2,17 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Hero from "./sections/Hero"
-import Brand from "./sections/Brand"
+
 import Cta from "./sections/Cta"
-import Reviews from "./sections/Reviews"
-import Products from "./sections/Products"
+
 import "./styles/main.scss"
+import TopBanner from "./components/TopBanner"
 import { useState, useEffect } from "react"
 import TopBtn from "./components/TopBtn"
 import Hello from "./sections/Hello"
 import Collection from "./sections/Collection"
-import TopBanner from "./components/Topbanner"
+import Skincare from "./sections/Skincare"
+import Instargram from "./sections/Instargram"
 function App() {
 
   const [topBanner, setTopBanner] = useState("")
@@ -54,11 +55,11 @@ function App() {
         <section id="Collection" className="Section">
           <Collection />
         </section>
-        <section id="Products" className="Section">
-          <Products />
+        <section id="Skincare" className="Section">
+          <Skincare />
         </section>
-        <section id="Reviews" className="Section">
-          <Reviews />
+        <section id="Instar" className="Section">
+          <Instargram />
         </section>
 
       </main>
