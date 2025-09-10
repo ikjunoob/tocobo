@@ -1,32 +1,32 @@
 import React from 'react'
-import instar from "../util/instar";
-
+import instar from "../util/instar"
+import "../styles/sections/instargram.scss"
 const Instargram = () => {
     return (
-        <div className="inner instar-inner">
+        <div className='inner instar-inner'>
             <div className="t-wrap">
-                <h3 className="title">Instagram</h3>
-                <a
-                    className="more"
-                    href="https://www.instagram.com/tocobo_official"
-                    target="_blank"
-                    rel="noreferrer"
-                >
+                <h2 className="con-tit">
+                    Instargram
+                </h2>
+                <p className="txt-4">
                     @tocobo_official
-                </a>
+                </p>
             </div>
-
             <ul className="instar-lst">
-                {instar.map(({ id, image, alt, link }) => (
-                    <li key={id}>
-                        <a href={link} aria-label={alt}>
-                            <img src={image} alt={alt} loading="lazy" />
+                {instar.map((i) => (
+
+                    <li key={i.id}>
+                        <a
+                            style={{ backgroundImage: `url(${i.image})` }}
+                            alt={i.alt}
+                            href={i.link}>
+                            {i.alt}
                         </a>
                     </li>
                 ))}
             </ul>
         </div>
-    );
-};
+    )
+}
 
-export default Instargram;
+export default Instargram
