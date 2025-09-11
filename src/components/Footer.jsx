@@ -1,5 +1,5 @@
 import React from 'react';
-import { logoData, companyData, customerCenterData, footerMenus, socialLinks } from "../util/footer";
+import { logoData, companyData, customerCenterData, footerMenus, socialLinks, footerLegal } from "../util/footer";
 
 import "../styles/components/footer.scss"
 
@@ -19,6 +19,16 @@ const Footer = () => {
                             <li key={i}>{line}</li>
                         ))}
                     </ul>
+                    <div className="footer-legal">
+                        <p>{footerLegal.copyright}</p>
+                        <div className="legal-links">
+                            {footerLegal.links.map((item, i) => (
+                                <a key={i} href={item.href}>
+                                    {item.label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
                 <div className="center">
@@ -54,6 +64,19 @@ const Footer = () => {
                             {customerCenterData.talk.label}
                         </a>
                     </div>
+
+                    <div className="footer-legal">
+
+                        <div className="legal-links">
+                            {footerLegal.links.map((item, i) => (
+                                <a key={i} href={item.href}>
+                                    {item.label}
+                                </a>
+                            ))}
+                        </div>
+                        <p>{footerLegal.copyright}</p>
+                    </div>
+
                     <ul className="sns-links">
                         {socialLinks.map((sns) => (
                             <li key={sns.id}>
@@ -66,6 +89,7 @@ const Footer = () => {
                             </li>
                         ))}
                     </ul>
+
                 </div>
             </div>
         </footer>
