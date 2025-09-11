@@ -13,8 +13,9 @@ const Header = ({ mNavOpen, onNavOpen, onNavClose }) => {
     const handleClick = (e, item) => {
         if (item.type === 'section') {
             e.preventDefault()
-            const id = item.herf?.startWith('#') ? item.herf.slice(1) : item.id
+            const id = item.href?.startsWith('#') ? item.href.slice(1) : item.id
             scrollTo(id)
+            onNavClose?.() // 모바일 메뉴라면 닫기
         }
     }
     return (

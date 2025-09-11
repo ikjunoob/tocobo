@@ -2,14 +2,18 @@ import React from 'react'
 import "../styles/components/mnav.scss"
 import { headerData } from '../util/header'
 import Util from './Util'
-const MNav = ({ onNavClose }) => {
+const MNav = ({ handleClick, onNavClose }) => {
     const navLink = headerData.menus
     return (
-        <div className='m-nav-wrap'>
+        <div className='m-nav-wrap' onClick={(e) => e.stopPropagation()}>
             <div className="m-top">
                 <Util />
                 <a href="#"
-                    onClick={onNavClose}
+                    onClick={(e) => {
+                        e.preventDefault()     // ✅ 맨 위 점프 방지
+                        e.stopPropagation()
+                        onNavClose()
+                    }}
                     className="m-close-btn">
                     <img src="/img/icon_search_close.png" alt="icon" />
                 </a>
@@ -18,7 +22,10 @@ const MNav = ({ onNavClose }) => {
             <ul className="m-nav-list">
                 {navLink.map((nav, i) => (
                     <li key={i}>
-                        <a href={nav.href}>
+                        <a
+                            href={nav.href}
+                            onClick={(e) => handleClick(e, nav)}
+                        >
                             {nav.label}
                         </a>
                     </li>
