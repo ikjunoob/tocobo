@@ -5,7 +5,7 @@ const Instargram = () => {
     return (
         <div className='inner instar-inner'>
             <div className="t-wrap">
-                <h2 className="con-tit">
+                <h2 className="tit">
                     Instargram
                 </h2>
                 <p className="txt-4">
