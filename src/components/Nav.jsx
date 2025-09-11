@@ -18,6 +18,9 @@ const Nav = () => {
 
     return (
         <nav>
+            <button className='mob-nav-btn'>
+                <img src="/img/icon_ham.svg" alt="메뉴열기" />
+            </button>
             <ul>
                 {navLink.map((item) => (
 
