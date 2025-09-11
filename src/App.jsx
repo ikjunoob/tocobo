@@ -16,8 +16,8 @@ import Instargram from "./sections/Instargram"
 function App() {
 
   const [topBanner, setTopBanner] = useState("")
-
   const [isScrolled, setIsScrolled] = useState(false)
+  const [mNavOpen, setMNavOpen] = useState(false)
 
 
   useEffect(() => {
@@ -31,6 +31,9 @@ function App() {
 
   })
 
+  const handleNavOpen = () => setMNavOpen(true)
+  const handleNavClose = () => setMNavOpen(false)
+
 
   const upTopBanner = () => {
     setTopBanner("up")
@@ -40,7 +43,11 @@ function App() {
     <div className={`app-container  ${topBanner} ${isScrolled ? "scrolled" : ""}`}>
       <TopBtn />
       <TopBanner onClick={upTopBanner} />
-      <Header />
+      <Header
+        mNavOpen={mNavOpen}
+        onNavOpen={handleNavOpen}
+        onNavClose={handleNavClose}
+      />
       <main>
         <section id="Hero" className="Section">
           <Hero />
