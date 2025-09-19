@@ -50,6 +50,22 @@
                 background-color: var(--secondary);
             }
         }
+
+        @media screen and (max-width:1200px) {
+            width: clamp(90rem, 90vw, 110rem);
+
+            .img-wrap {
+                width: clamp(25rem, 26vw, 30rem);
+                height: clamp(25rem, 26vw, 30rem);
+            }
+
+            .swiper-pagination {
+                width: 90vw;
+                margin: 3rem 0;
+            }
+        }
+
+
     }
 
     .prev,
