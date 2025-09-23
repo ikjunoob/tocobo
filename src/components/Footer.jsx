@@ -31,9 +31,10 @@ const Footer = () => {
             }
             el.addEventListener('transitionEnd', onTransitionEnd)
         } else {
-
+            el.style.height = `${el.scrollHeight}px`
+            void el.offsetHeight
+            el.style.height = '0px'
         }
-
 
 
     }, [isOpen])
@@ -85,7 +86,9 @@ const Footer = () => {
                 <div className="right">
 
                     {/* 고객센터 */}
-                    <div className='cus-wrap '>
+                    <div
+                        onClick={() => setIsOpen(prevStatus => !prevStatus)}
+                        className={`${isOpen ? "open" : ""} cus-wrap`}>
                         <h4>
                             {customerCenterData.title}
                             <span className="m-plus"></span>

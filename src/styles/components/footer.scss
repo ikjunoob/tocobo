@@ -135,6 +135,10 @@ footer {
                         height: 0;
                         overflow: hidden;
                         transition: height 0.4s ease;
+
+                        .cs-box {
+                            margin-top: 2rem;
+                        }
                     }
 
                     &.open {
