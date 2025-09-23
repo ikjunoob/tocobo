@@ -3,7 +3,7 @@ import Nav from './Nav'
 import Util from './Util'
 import MNav from './MNav'
 import useSmoothScroll from '../hooks/useSmoothScroll'
-import { headerData } from '../util/header'
+import { headerData } from '../util/header.js'
 import "../styles/components/header.scss"
 const Header = ({ mNavOpen, onNavOpen, onNavClose }) => {
 
